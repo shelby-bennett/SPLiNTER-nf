@@ -140,7 +140,7 @@ process assembly_results {
 
             for line in csv_reader:
 
-                if line["status"] == "fail":
+                if line["qc_status"] == "fail":
 
                     result.pangolin_lineage = "failed pangolin qc"
 
@@ -150,9 +150,9 @@ process assembly_results {
 
                     result.pangolin_conflict = line["conflict"]
 
-                    result.pangolin_notes = line["note"]
+                    result.pangolin_notes = line["scorpio_note"]
 
-                    result.pangolin_version = line["pangoLEARN_version"]
+                    result.pangolin_version = line["pangolin_version"]
 
 
 
@@ -168,7 +168,7 @@ process assembly_results {
 
         writer = csv.writer(csvout,delimiter=',')
 
-        writer.writerow(["sample","aligned_bases","percent_cvg", "mean_depth", "mean_base_q", "mean_map_q", "monroe_qc", "pangolin_lineage", "pangolin_conflict", "pangolin_notes","pangoLEARN_version"])
+        writer.writerow(["sample","aligned_bases","percent_cvg", "mean_depth", "mean_base_q", "mean_map_q", "monroe_qc", "pangolin_lineage", "pangolin_conflict", "pangolin_notes","pangolin_version"])
 
         for id in results:
 
