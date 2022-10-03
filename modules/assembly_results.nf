@@ -104,9 +104,9 @@ process assembly_results {
 
                 result.percent_cvg = line["coverage"]
 
-                if float(line["coverage"]) < 80:
+                if float(line["coverage"]) < 60:
 
-                    monroe_qc.append("coverage <80%")
+                    monroe_qc.append("coverage <60%")
 
                 result.mean_depth = line["meandepth"]
 
