@@ -150,7 +150,7 @@ process assembly_results {
 
                     result.pangolin_conflict = line["conflict"]
 
-                    result.pangolin_notes = line["scorpio_note"]
+                    result.pangolin_notes = line["scorpio_notes"]
 
                     result.pangolin_version = line["pangolin_version"]
 
